@@ -183,10 +183,12 @@ export default function PatternConverterPage() {
                 <Text style={styles.resultText}>Pattern stitches per inch: {results.spiPattern}</Text>
                 <Text style={styles.resultText}>Pattern body width: {results.patternInches}" (approx)</Text>
                 <Text style={styles.resultText}>Your stitches per inch: {results.spiYou}</Text>
-                <Text style={[styles.resultText, styles.highlightResult]}>
-                  New cast-on: {results.newCastOn} sts (approx)
-                  {results.withinMax && ` – within your maximum of ${results.maxCastOnValue} sts.`}
-                </Text>
+                {!results.exceedsMax && (
+                  <Text style={[styles.resultText, styles.highlightResult]}>
+                    New cast-on: {results.newCastOn} sts (approx)
+                    {results.withinMax && ` – within your maximum of ${results.maxCastOnValue} sts.`}
+                  </Text>
+                )}
                 {results.exceedsMax && (
                   <Text style={styles.maxWarningText}>
                     New cast-on: {results.newCastOn} sts (approx), which is over your maximum of {results.maxCastOnValue} sts. This yarn/gauge probably won't work for this pattern.
