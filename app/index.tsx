@@ -1,105 +1,34 @@
 import React from 'react';
-import { View, Text, StyleSheet, ImageBackground, ScrollView, Platform, Pressable } from 'react-native';
+import { View, Text, StyleSheet, ImageBackground, Pressable } from 'react-native';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import { Colors, Layout, Typography } from '@/constants/theme';
-import { ChevronLeft } from 'lucide-react-native';
+import { Typography } from '@/constants/theme';
 
-const BACKGROUND_IMAGE_URL = 'https://raw.githubusercontent.com/Jillaine/KnitKit-Assets/main/images/background_yarn.jpg';
+const YARN_IMAGE_URL = 'https://pub-e001eb4506b145aa938b5d3badbff6a5.r2.dev/attachments/ef5yu9zcuyqs8z9e8raox';
 
-export default function ContentsPage() {
+export default function LandingPage() {
   const router = useRouter();
 
   return (
     <View style={styles.container}>
-      <StatusBar style="dark" />
+      <StatusBar style="light" />
       <ImageBackground
-        source={{ uri: BACKGROUND_IMAGE_URL }}
+        source={{ uri: YARN_IMAGE_URL }}
         style={styles.backgroundImage}
-        imageStyle={styles.backgroundImageStyle}
+        resizeMode="cover"
       >
-        <View style={styles.overlay}>
-          <ScrollView
-            contentContainerStyle={styles.scrollContent}
-            showsVerticalScrollIndicator={false}
+        <View style={styles.content}>
+          <Text style={styles.title}>KnitKit</Text>
+          
+          <Pressable
+            style={({ pressed }) => [
+              styles.button,
+              pressed && styles.buttonPressed
+            ]}
+            onPress={() => router.push('/contents')}
           >
-            <View style={styles.content}>
-              <View style={styles.header}>
-                <Text style={styles.title}>KNITKIT</Text>
-                <View style={styles.divider} />
-                <Text style={styles.subtitle}>CONTENTS</Text>
-                <View style={styles.divider} />
-              </View>
-
-              <View style={styles.linkList}>
-                <Pressable
-                  style={({ pressed }) => [
-                    styles.linkItem,
-                    pressed && styles.linkItemPressed
-                  ]}
-                  onPress={() => router.push('/row-counter')}
-                >
-                  <Text style={styles.linkText}>Row / Stitch Counter</Text>
-                </Pressable>
-                <View style={styles.divider} />
-
-                <Pressable
-                  style={({ pressed }) => [
-                    styles.linkItem,
-                    pressed && styles.linkItemPressed
-                  ]}
-                  onPress={() => router.push('/size-guide')}
-                >
-                  <Text style={styles.linkText}>Size Guide</Text>
-                </Pressable>
-                <View style={styles.divider} />
-
-                <Pressable
-                  style={({ pressed }) => [
-                    styles.linkItem,
-                    pressed && styles.linkItemPressed
-                  ]}
-                  onPress={() => router.push('/yarn-guide')}
-                >
-                  <Text style={styles.linkText}>Yarn Guide</Text>
-                </Pressable>
-                <View style={styles.divider} />
-
-                <Pressable
-                  style={({ pressed }) => [
-                    styles.linkItem,
-                    pressed && styles.linkItemPressed
-                  ]}
-                  onPress={() => router.push('/needle-sizes')}
-                >
-                  <Text style={styles.linkText}>Needle Sizes</Text>
-                </Pressable>
-                <View style={styles.divider} />
-
-                <Pressable
-                  style={({ pressed }) => [
-                    styles.linkItem,
-                    pressed && styles.linkItemPressed
-                  ]}
-                  onPress={() => router.push('/pattern-converter')}
-                >
-                  <Text style={styles.linkText}>Pattern Converter</Text>
-                </Pressable>
-                <View style={styles.divider} />
-              </View>
-
-              <Pressable
-                style={({ pressed }) => [
-                  styles.backLink,
-                  pressed && styles.backLinkPressed
-                ]}
-                onPress={() => router.push('/row-counter')}
-              >
-                <ChevronLeft size={16} color={Colors.charcoal} strokeWidth={1.5} />
-                <Text style={styles.backLinkText}>Back to Counter</Text>
-              </Pressable>
-            </View>
-          </ScrollView>
+            <Text style={styles.buttonText}>START</Text>
+          </Pressable>
         </View>
       </ImageBackground>
     </View>
@@ -109,91 +38,47 @@ export default function ContentsPage() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.cream,
   },
   backgroundImage: {
     flex: 1,
-  },
-  backgroundImageStyle: {
-    opacity: 0.6,
-  },
-  overlay: {
-    flex: 1,
-    backgroundColor: 'rgba(250, 249, 246, 0.5)',
-  },
-  scrollContent: {
-    flexGrow: 1,
-    minHeight: '100%',
-    paddingVertical: Platform.OS === 'web' ? 40 : 60,
-    paddingHorizontal: Layout.spacing.xl,
+    width: '100%',
+    height: '100%',
   },
   content: {
     flex: 1,
-    alignSelf: 'center',
-    width: '100%',
-    maxWidth: Layout.maxContentWidth,
     justifyContent: 'space-between',
-  },
-  header: {
     alignItems: 'center',
-    marginBottom: Layout.spacing.md,
+    paddingVertical: 80,
+    paddingHorizontal: 40,
   },
   title: {
     fontFamily: Typography.fontFamily,
-    fontSize: Typography.sizes.title + 4,
+    fontSize: 56,
+    fontWeight: Typography.weights.bold,
+    color: '#e8e5dd',
+    letterSpacing: 4,
+    textAlign: 'center',
+  },
+  button: {
+    backgroundColor: '#e8e5dd',
+    paddingHorizontal: 60,
+    paddingVertical: 18,
+    borderRadius: 8,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 8,
+  },
+  buttonPressed: {
+    opacity: 0.85,
+    transform: [{ scale: 0.98 }],
+  },
+  buttonText: {
+    fontFamily: Typography.fontFamily,
+    fontSize: 18,
     fontWeight: Typography.weights.semibold,
-    color: Colors.black,
-    letterSpacing: 3,
-    textAlign: 'center',
-    marginBottom: Layout.spacing.lg,
-  },
-  subtitle: {
-    fontFamily: Typography.fontFamily,
-    fontSize: Typography.sizes.heading - 2,
-    fontWeight: Typography.weights.regular,
-    color: Colors.charcoal,
+    color: '#2c2c2c',
     letterSpacing: 2,
-    textAlign: 'center',
-    marginVertical: Layout.spacing.lg,
-  },
-  divider: {
-    width: '100%',
-    height: 1,
-    backgroundColor: Colors.black,
-  },
-  linkList: {
-    flex: 1,
-    justifyContent: 'space-evenly',
-    paddingVertical: Layout.spacing.xl,
-  },
-  linkItem: {
-    paddingVertical: Layout.spacing.xl,
-    alignItems: 'center',
-  },
-  linkItemPressed: {
-    opacity: 0.6,
-  },
-  linkText: {
-    fontFamily: Typography.fontFamily,
-    fontSize: Typography.sizes.body,
-    fontWeight: Typography.weights.regular,
-    color: Colors.charcoal,
-    textAlign: 'center',
-  },
-  backLink: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: Layout.spacing.md,
-  },
-  backLinkPressed: {
-    opacity: 0.6,
-  },
-  backLinkText: {
-    fontFamily: Typography.fontFamily,
-    fontSize: Typography.sizes.body - 2,
-    fontWeight: Typography.weights.regular,
-    color: Colors.charcoal,
-    marginLeft: Layout.spacing.xs,
   },
 });

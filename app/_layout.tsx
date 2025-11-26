@@ -14,6 +14,7 @@ function RootLayoutNav() {
   return (
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen name="index" />
+      <Stack.Screen name="contents" />
       <Stack.Screen name="row-counter" />
       <Stack.Screen name="stitch-counter" />
       <Stack.Screen name="pattern-converter" />
