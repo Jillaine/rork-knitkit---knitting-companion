@@ -46,18 +46,20 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     alignItems: 'center',
-    paddingVertical: 80,
     paddingHorizontal: 40,
   },
   title: {
     fontFamily: Typography.fontFamily,
-    fontSize: 56,
+    fontSize: 112,
     fontWeight: Typography.weights.bold,
     color: '#e8e5dd',
     letterSpacing: 4,
     textAlign: 'center',
+    position: 'absolute',
+    top: '50%',
+    transform: [{ translateY: -56 }],
   },
   button: {
     backgroundColor: '#e8e5dd',
@@ -69,6 +71,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3,
     shadowRadius: 8,
     elevation: 8,
+    position: 'absolute',
+    bottom: 80,
   },
   buttonPressed: {
     opacity: 0.85,
@@ -76,7 +80,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontFamily: Typography.fontFamily,
-    fontSize: 18,
+    fontSize: 24,
     fontWeight: Typography.weights.semibold,
     color: '#2c2c2c',
     letterSpacing: 2,
