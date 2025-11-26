@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
     elevation: 8,
     position: 'absolute',
-    bottom: 80,
+    bottom: 120,
   },
   buttonPressed: {
     opacity: 0.85,
