@@ -112,7 +112,7 @@ export default function PatternConverterPage() {
     <View style={[styles.container, { paddingTop: insets.top, paddingBottom: insets.bottom }]}>
       <StatusBar style="dark" />
       <Image
-        source={{ uri: 'https://pub-e001eb4506b145aa938b5d3badbff6a5.r2.dev/attachments/vzf2abcdism1flty4cxz1' }}
+        source={{ uri: 'https://pub-e001eb4506b145aa938b5d3badbff6a5.r2.dev/attachments/9t8sc84a5tl4d53krz3yf' }}
         style={[styles.footerYarnBackground, { bottom: insets.bottom }]}
         resizeMode="cover"
       />
