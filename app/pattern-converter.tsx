@@ -111,6 +111,11 @@ export default function PatternConverterPage() {
   return (
     <View style={[styles.container, { paddingTop: insets.top, paddingBottom: insets.bottom }]}>
       <StatusBar style="dark" />
+      <Image
+        source={{ uri: 'https://pub-e001eb4506b145aa938b5d3badbff6a5.r2.dev/attachments/vzf2abcdism1flty4cxz1' }}
+        style={[styles.footerYarnBackground, { bottom: insets.bottom }]}
+        resizeMode="cover"
+      />
       <ScrollView
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
@@ -313,11 +318,6 @@ export default function PatternConverterPage() {
           </View>
         </View>
       </ScrollView>
-      <Image
-        source={{ uri: 'https://pub-e001eb4506b145aa938b5d3badbff6a5.r2.dev/attachments/vzf2abcdism1flty4cxz1' }}
-        style={styles.footerYarn}
-        resizeMode="cover"
-      />
     </View>
   );
 }
@@ -332,11 +332,13 @@ const styles = StyleSheet.create({
     paddingVertical: Platform.OS === 'web' ? 40 : 20,
     paddingHorizontal: Layout.spacing.xl,
     paddingBottom: 120,
+    zIndex: 1,
   },
   content: {
     alignSelf: 'center',
     width: '100%',
     maxWidth: Layout.maxContentWidth,
+    zIndex: 1,
   },
   header: {
     alignItems: 'center',
@@ -496,13 +498,14 @@ const styles = StyleSheet.create({
   backButton: {
     paddingHorizontal: Layout.spacing.xxl,
   },
-  footerYarn: {
+  footerYarnBackground: {
     position: 'absolute',
-    bottom: 0,
-    left: -50,
-    right: -50,
-    height: 200,
-    width: '120%',
-    opacity: 1,
+    bottom: -30,
+    left: '50%',
+    width: '150%',
+    height: 180,
+    marginLeft: '-75%',
+    zIndex: 0,
+    backgroundColor: Colors.cream,
   },
 });
