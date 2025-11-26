@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     letterSpacing: 4,
     textAlign: 'center',
     position: 'absolute',
-    top: '50%',
+    top: '30%',
     transform: [{ translateY: -56 }],
   },
   button: {
