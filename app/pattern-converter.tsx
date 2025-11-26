@@ -331,6 +331,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     paddingVertical: Platform.OS === 'web' ? 40 : 20,
     paddingHorizontal: Layout.spacing.xl,
+    paddingBottom: 120,
   },
   content: {
     alignSelf: 'center',
@@ -497,11 +498,11 @@ const styles = StyleSheet.create({
   },
   footerYarn: {
     position: 'absolute',
-    bottom: -80,
+    bottom: 0,
     left: -50,
     right: -50,
-    height: 180,
+    height: 200,
     width: '120%',
-    zIndex: -1,
+    opacity: 1,
   },
 });
