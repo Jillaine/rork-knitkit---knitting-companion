@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, TextInput, Platform } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TextInput, Platform, Image } from 'react-native';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -313,6 +313,11 @@ export default function PatternConverterPage() {
           </View>
         </View>
       </ScrollView>
+      <Image
+        source={{ uri: 'https://pub-e001eb4506b145aa938b5d3badbff6a5.r2.dev/attachments/vzf2abcdism1flty4cxz1' }}
+        style={styles.footerYarn}
+        resizeMode="cover"
+      />
     </View>
   );
 }
@@ -489,5 +494,14 @@ const styles = StyleSheet.create({
   },
   backButton: {
     paddingHorizontal: Layout.spacing.xxl,
+  },
+  footerYarn: {
+    position: 'absolute',
+    bottom: -80,
+    left: -50,
+    right: -50,
+    height: 180,
+    width: '120%',
+    zIndex: -1,
   },
 });
