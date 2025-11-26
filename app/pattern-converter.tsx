@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, TextInput, Platform, Image } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TextInput, Platform, Image, TouchableOpacity } from 'react-native';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Button } from '@/components/Button';
 import { Colors, Layout, Typography } from '@/constants/theme';
+import { ChevronDown } from 'lucide-react-native';
 
 export default function PatternConverterPage() {
   const router = useRouter();
@@ -21,6 +22,7 @@ export default function PatternConverterPage() {
   const [helperBody, setHelperBody] = useState<string>('');
   const [helperEase, setHelperEase] = useState<string>('');
   const [showHelperResults, setShowHelperResults] = useState<boolean>(false);
+  const [isHowItWorksExpanded, setIsHowItWorksExpanded] = useState<boolean>(false);
 
   const calculateConversion = () => {
     if (!patternGauge || !yourGauge || !patternCastOn) return null;
@@ -125,6 +127,31 @@ export default function PatternConverterPage() {
             <Text style={styles.pageTitle}>KNITKIT</Text>
             <Text style={styles.sectionTitle}>Pattern Converter</Text>
             <Text style={styles.subtitle}>Adjust a pattern to work with a different yarn or gauge.</Text>
+            
+            <TouchableOpacity
+              style={styles.collapsibleHeader}
+              onPress={() => setIsHowItWorksExpanded(!isHowItWorksExpanded)}
+              activeOpacity={0.7}
+            >
+              <Text style={styles.collapsibleTitle}>How this works</Text>
+              <ChevronDown
+                size={18}
+                color={Colors.charcoal}
+                style={[
+                  styles.chevron,
+                  isHowItWorksExpanded && styles.chevronExpanded,
+                ]}
+              />
+            </TouchableOpacity>
+            
+            {isHowItWorksExpanded && (
+              <View style={styles.collapsibleContent}>
+                <Text style={styles.bulletPoint}>• Enter the pattern gauge, your gauge, and the pattern cast-on.</Text>
+                <Text style={styles.bulletPoint}>• We calculate the new cast-on stitches for your gauge.</Text>
+                <Text style={styles.bulletPoint}>• If the gauge difference is small, we'll suggest just changing needle size.</Text>
+                <Text style={styles.bulletPoint}>• Optionally enter a maximum cast-on and we'll warn you if the new number is too high.</Text>
+              </View>
+            )}
           </View>
 
           <View style={styles.section}>
@@ -507,5 +534,36 @@ const styles = StyleSheet.create({
     marginLeft: '-75%',
     zIndex: 0,
     backgroundColor: Colors.cream,
+  },
+  collapsibleHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: Layout.spacing.xs,
+    marginTop: Layout.spacing.lg,
+    paddingVertical: Layout.spacing.sm,
+  },
+  collapsibleTitle: {
+    fontFamily: Typography.fontFamily,
+    fontSize: Typography.sizes.label,
+    fontWeight: Typography.weights.regular,
+    color: Colors.charcoal,
+  },
+  chevron: {
+    transition: 'transform 0.2s',
+  },
+  chevronExpanded: {
+    transform: [{ rotate: '180deg' }],
+  },
+  collapsibleContent: {
+    marginTop: Layout.spacing.md,
+    paddingHorizontal: Layout.spacing.md,
+    gap: Layout.spacing.sm,
+  },
+  bulletPoint: {
+    fontFamily: Typography.fontFamily,
+    fontSize: Typography.sizes.label - 1,
+    color: Colors.charcoal,
+    lineHeight: 20,
   },
 });
