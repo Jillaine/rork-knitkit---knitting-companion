@@ -177,6 +177,7 @@ export default function SizeGuidePage() {
                 selectedValue={ease}
                 onValueChange={(value: string) => setEase(value)}
                 style={styles.picker}
+                itemStyle={styles.pickerItem}
               >
                 {easeOptions.map(option => (
                   <Picker.Item key={option} label={`${option}"`} value={option} />
@@ -373,16 +374,29 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   pickerContainer: {
-    borderWidth: 1,
+    borderWidth: 2,
     borderColor: Colors.charcoal,
-    borderRadius: 24,
+    borderRadius: 16,
     overflow: 'hidden',
-    backgroundColor: Colors.cream,
+    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+    marginVertical: Layout.spacing.sm,
   },
   picker: {
-    height: 50,
+    height: Platform.select({
+      ios: 180,
+      android: 180,
+      default: 60,
+    }),
     fontFamily: Typography.fontFamily,
-    fontSize: Typography.sizes.body + 2,
+    fontSize: Typography.sizes.body + 6,
+    fontWeight: Typography.weights.semibold,
+    color: Colors.charcoal,
+  },
+  pickerItem: {
+    height: 180,
+    fontSize: Typography.sizes.heading + 2,
+    fontWeight: Typography.weights.semibold,
+    color: Colors.charcoal,
   },
   resultBox: {
     backgroundColor: 'rgba(0, 0, 0, 0.04)',
