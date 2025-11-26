@@ -351,7 +351,7 @@ const styles = StyleSheet.create({
     fontWeight: Typography.weights.semibold,
     color: Colors.charcoal,
     textAlign: 'center',
-    marginBottom: Layout.spacing.xs,
+    marginBottom: Layout.spacing.md,
   },
   helperSubtitle: {
     fontFamily: Typography.fontFamily,
@@ -359,7 +359,7 @@ const styles = StyleSheet.create({
     fontWeight: Typography.weights.regular,
     color: Colors.charcoal,
     textAlign: 'center',
-    marginBottom: Layout.spacing.xs,
+    marginBottom: Layout.spacing.md,
   },
   subtitle: {
     fontFamily: Typography.fontFamily,
