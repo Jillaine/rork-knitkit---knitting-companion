@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { View, Text, StyleSheet, ScrollView, Platform, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Platform, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -65,10 +65,16 @@ export default function SizeGuidePage() {
   return (
     <View style={[styles.container, { paddingTop: insets.top, paddingBottom: insets.bottom }]}>
       <StatusBar style="dark" />
-      <ScrollView
-        contentContainerStyle={styles.scrollContent}
-        showsVerticalScrollIndicator={false}
+      <ImageBackground
+        source={{ uri: 'https://pub-e001eb4506b145aa938b5d3badbff6a5.r2.dev/attachments/0nquajkzoofiscysfz6v9' }}
+        style={styles.backgroundImage}
+        imageStyle={styles.backgroundImageStyle}
       >
+        <View style={styles.overlay} />
+        <ScrollView
+          contentContainerStyle={styles.scrollContent}
+          showsVerticalScrollIndicator={false}
+        >
         <View style={styles.content}>
           <View style={styles.header}>
             <Text style={styles.appTitle}>KNITKIT</Text>
@@ -231,7 +237,8 @@ export default function SizeGuidePage() {
             </TouchableOpacity>
           </View>
         </View>
-      </ScrollView>
+        </ScrollView>
+      </ImageBackground>
     </View>
   );
 }
@@ -240,6 +247,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.cream,
+  },
+  backgroundImage: {
+    flex: 1,
+    width: '100%',
+    height: '100%',
+  },
+  backgroundImageStyle: {
+    opacity: 0.6,
+  },
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
   scrollContent: {
     flexGrow: 1,
@@ -363,6 +382,7 @@ const styles = StyleSheet.create({
   picker: {
     height: 50,
     fontFamily: Typography.fontFamily,
+    fontSize: Typography.sizes.body + 2,
   },
   resultBox: {
     backgroundColor: 'rgba(0, 0, 0, 0.04)',

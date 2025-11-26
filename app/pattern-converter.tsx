@@ -215,6 +215,8 @@ export default function PatternConverterPage() {
             <Text style={styles.helperSubtitle}>Size helper (optional)</Text>
             <Text style={styles.subtitle}>Figure out which written size is closest to your body + ease.</Text>
 
+            <View style={styles.sectionSpacer} />
+
             <View style={styles.inputGroup}>
               <Text style={styles.label}>Pattern Gauge (sts / 4")</Text>
               <TextInput
@@ -365,6 +367,10 @@ const styles = StyleSheet.create({
     fontWeight: Typography.weights.regular,
     color: Colors.charcoal,
     textAlign: 'center',
+    marginBottom: Layout.spacing.md,
+  },
+  sectionSpacer: {
+    height: Layout.spacing.lg,
   },
   section: {
     marginBottom: Layout.spacing.xxl,
