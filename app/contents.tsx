@@ -5,7 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 import { Colors, Layout, Typography } from '@/constants/theme';
 import { ChevronLeft } from 'lucide-react-native';
 
-const BACKGROUND_IMAGE = require('../assets/images/background_yarn.jpg');
+const BACKGROUND_IMAGE = { uri: 'https://images.unsplash.com/photo-1611852570934-0e9f7e6d0c0e?w=1200&q=80' };
 
 export default function ContentsPage() {
   const router = useRouter();
