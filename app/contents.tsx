@@ -1,12 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, Platform, Pressable } from 'react-native';
-import { Image } from 'expo-image';
+import { View, Text, StyleSheet, ImageBackground, ScrollView, Platform, Pressable } from 'react-native';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { Colors, Layout, Typography } from '@/constants/theme';
 import { ChevronLeft } from 'lucide-react-native';
 
-const BACKGROUND_IMAGE = 'https://images.unsplash.com/photo-1606137548906-76eb17d3818c?w=1200&q=80';
+const BACKGROUND_IMAGE = require('../assets/images/background_yarn.jpg');
 
 export default function ContentsPage() {
   const router = useRouter();
@@ -14,13 +13,11 @@ export default function ContentsPage() {
   return (
     <View style={styles.container}>
       <StatusBar style="dark" />
-      <View style={styles.backgroundImage}>
-        <Image
-          source={BACKGROUND_IMAGE}
-          style={StyleSheet.absoluteFillObject}
-          contentFit="cover"
-          cachePolicy="memory-disk"
-        />
+      <ImageBackground
+        source={BACKGROUND_IMAGE}
+        style={styles.backgroundImage}
+        imageStyle={styles.backgroundImageStyle}
+      >
         <View style={styles.overlay}>
           <ScrollView
             contentContainerStyle={styles.scrollContent}
@@ -104,7 +101,7 @@ export default function ContentsPage() {
             </View>
           </ScrollView>
         </View>
-      </View>
+      </ImageBackground>
     </View>
   );
 }
@@ -117,8 +114,11 @@ const styles = StyleSheet.create({
   backgroundImage: {
     flex: 1,
   },
+  backgroundImageStyle: {
+    opacity: 0.6,
+  },
   overlay: {
-    ...StyleSheet.absoluteFillObject,
+    flex: 1,
     backgroundColor: 'rgba(250, 249, 246, 0.5)',
   },
   scrollContent: {
