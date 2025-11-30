@@ -12,7 +12,7 @@ export default function ContentsPage() {
     <View style={styles.container}>
       <StatusBar style="dark" />
       <ImageBackground
-        source={require('../assets/images/background_yarn.png')}
+        source={require('@/assets/images/background_yarn.png')}
         style={styles.backgroundImage}
         imageStyle={styles.backgroundImageStyle}
       >
