@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, ImageBackground, ScrollView, Platform, Pressable } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Platform, Pressable } from 'react-native';
+import { Image } from 'expo-image';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { Colors, Layout, Typography } from '@/constants/theme';
@@ -13,11 +14,13 @@ export default function ContentsPage() {
   return (
     <View style={styles.container}>
       <StatusBar style="dark" />
-      <ImageBackground
-        source={{ uri: BACKGROUND_IMAGE_URL }}
-        style={styles.backgroundImage}
-        imageStyle={styles.backgroundImageStyle}
-      >
+      <View style={styles.backgroundImage}>
+        <Image
+          source={{ uri: BACKGROUND_IMAGE_URL }}
+          style={StyleSheet.absoluteFillObject}
+          contentFit="cover"
+          cachePolicy="memory-disk"
+        />
         <View style={styles.overlay}>
           <ScrollView
             contentContainerStyle={styles.scrollContent}
@@ -101,7 +104,7 @@ export default function ContentsPage() {
             </View>
           </ScrollView>
         </View>
-      </ImageBackground>
+      </View>
     </View>
   );
 }
@@ -114,11 +117,8 @@ const styles = StyleSheet.create({
   backgroundImage: {
     flex: 1,
   },
-  backgroundImageStyle: {
-    opacity: 0.6,
-  },
   overlay: {
-    flex: 1,
+    ...StyleSheet.absoluteFillObject,
     backgroundColor: 'rgba(250, 249, 246, 0.5)',
   },
   scrollContent: {
