@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, TextInput, Platform, TouchableOpacity } from 'react-native';
-import { Image } from 'expo-image';
+import { View, Text, StyleSheet, ScrollView, TextInput, Platform, TouchableOpacity, Image } from 'react-native';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 
@@ -118,9 +117,7 @@ export default function PatternConverterPage() {
       <Image
         source={require('../assets/images/nobackground_blue_skein.png')}
         style={[styles.footerYarnBackground, { bottom: insets.bottom }]}
-        contentFit="cover"
-        priority="high"
-        cachePolicy="memory-disk"
+        resizeMode="cover"
       />
       <ScrollView
         contentContainerStyle={styles.scrollContent}

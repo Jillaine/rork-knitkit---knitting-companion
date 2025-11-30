@@ -1,8 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, Pressable } from 'react-native';
+import { View, Text, StyleSheet, Pressable, Image } from 'react-native';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import { Image } from 'expo-image';
 
 import { Typography } from '@/constants/theme';
 
@@ -15,9 +14,7 @@ export default function LandingPage() {
       <Image
         source={require('../assets/images/landing_skein.png')}
         style={styles.backgroundImage}
-        contentFit="cover"
-        priority="high"
-        cachePolicy="memory-disk"
+        resizeMode="cover"
       />
       <View style={styles.content}>
           <Text style={styles.title}>KnitKit</Text>

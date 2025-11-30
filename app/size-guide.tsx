@@ -1,6 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { View, Text, StyleSheet, ScrollView, Platform, TextInput, TouchableOpacity } from 'react-native';
-import { Image } from 'expo-image';
+import { View, Text, StyleSheet, ScrollView, Platform, TextInput, TouchableOpacity, Image } from 'react-native';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 
@@ -70,9 +69,7 @@ export default function SizeGuidePage() {
       <Image
         source={require('../assets/images/dressmakers_dummy.png')}
         style={styles.backgroundImage}
-        contentFit="cover"
-        priority="high"
-        cachePolicy="memory-disk"
+        resizeMode="cover"
       />
       <View style={styles.overlay} />
         <ScrollView

@@ -1,8 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, Platform, Pressable } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Platform, Pressable, Image } from 'react-native';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import { Image } from 'expo-image';
 
 import { Colors, Layout, Typography } from '@/constants/theme';
 import { ChevronLeft } from 'lucide-react-native';
@@ -16,9 +15,7 @@ export default function ContentsPage() {
       <Image
         source={require('../assets/images/background_yarn.png')}
         style={styles.backgroundImage}
-        contentFit="cover"
-        priority="high"
-        cachePolicy="memory-disk"
+        resizeMode="cover"
       />
       <View style={styles.overlay}>
           <ScrollView
