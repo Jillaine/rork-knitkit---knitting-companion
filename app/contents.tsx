@@ -5,8 +5,6 @@ import { StatusBar } from 'expo-status-bar';
 import { Colors, Layout, Typography } from '@/constants/theme';
 import { ChevronLeft } from 'lucide-react-native';
 
-const BACKGROUND_IMAGE = require('../assets/images/background_yarn.png');
-
 export default function ContentsPage() {
   const router = useRouter();
 
@@ -14,7 +12,7 @@ export default function ContentsPage() {
     <View style={styles.container}>
       <StatusBar style="dark" />
       <ImageBackground
-        source={BACKGROUND_IMAGE}
+        source={require('../assets/images/background_yarn.png')}
         style={styles.backgroundImage}
         imageStyle={styles.backgroundImageStyle}
       >
