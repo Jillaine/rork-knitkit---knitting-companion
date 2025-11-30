@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
-import { View, Text, StyleSheet, ScrollView, Platform, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Platform, TextInput, TouchableOpacity } from 'react-native';
+import { ImageBackground } from 'expo-image';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -69,6 +70,7 @@ export default function SizeGuidePage() {
         source={{ uri: 'https://pub-e001eb4506b145aa938b5d3badbff6a5.r2.dev/attachments/0nquajkzoofiscysfz6v9' }}
         style={styles.backgroundImage}
         imageStyle={styles.backgroundImageStyle}
+        cachePolicy="memory-disk"
       >
         <View style={styles.overlay} />
         <ScrollView

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, TextInput, Platform, Image, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TextInput, Platform, TouchableOpacity } from 'react-native';
+import { Image } from 'expo-image';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -116,7 +117,8 @@ export default function PatternConverterPage() {
       <Image
         source={{ uri: 'https://pub-e001eb4506b145aa938b5d3badbff6a5.r2.dev/attachments/9t8sc84a5tl4d53krz3yf' }}
         style={[styles.footerYarnBackground, { bottom: insets.bottom }]}
-        resizeMode="cover"
+        contentFit="cover"
+        cachePolicy="memory-disk"
       />
       <ScrollView
         contentContainerStyle={styles.scrollContent}
