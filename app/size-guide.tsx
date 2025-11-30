@@ -1,8 +1,8 @@
 import React, { useState, useMemo } from 'react';
-import { View, Text, StyleSheet, ScrollView, Platform, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Platform, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import { ImageBackground } from 'expo-image';
+
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Colors, Layout, Typography } from '@/constants/theme';
 import { Picker } from '@react-native-picker/picker';
@@ -70,8 +70,7 @@ export default function SizeGuidePage() {
         source={require('../assets/images/dressmakers_dummy.png')}
         style={styles.backgroundImage}
         imageStyle={styles.backgroundImageStyle}
-        contentFit="cover"
-        cachePolicy="memory-disk"
+        resizeMode="cover"
       >
         <View style={styles.overlay} />
         <ScrollView
