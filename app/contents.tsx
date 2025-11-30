@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, Platform, Pressable, ImageBackground } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Platform, Pressable } from 'react-native';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
+import { Image } from 'expo-image';
 
 import { Colors, Layout, Typography } from '@/constants/theme';
 import { ChevronLeft } from 'lucide-react-native';
@@ -12,13 +13,14 @@ export default function ContentsPage() {
   return (
     <View style={styles.container}>
       <StatusBar style="dark" />
-      <ImageBackground
+      <Image
         source={require('../assets/images/background_yarn.png')}
         style={styles.backgroundImage}
-        imageStyle={styles.backgroundImageStyle}
-        resizeMode="cover"
-      >
-        <View style={styles.overlay}>
+        contentFit="cover"
+        priority="high"
+        cachePolicy="memory-disk"
+      />
+      <View style={styles.overlay}>
           <ScrollView
             contentContainerStyle={styles.scrollContent}
             showsVerticalScrollIndicator={false}
@@ -101,7 +103,6 @@ export default function ContentsPage() {
             </View>
           </ScrollView>
         </View>
-      </ImageBackground>
     </View>
   );
 }
@@ -112,9 +113,11 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.cream,
   },
   backgroundImage: {
-    flex: 1,
-  },
-  backgroundImageStyle: {
+    position: 'absolute' as const,
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
     opacity: 0.6,
   },
   overlay: {

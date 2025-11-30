@@ -1,11 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet, Pressable, ImageBackground } from 'react-native';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
+import { Image } from 'expo-image';
 
 import { Typography } from '@/constants/theme';
-
-const LANDING_IMAGE = require('../assets/images/landing_skein.png');
 
 export default function LandingPage() {
   const router = useRouter();
@@ -13,12 +12,14 @@ export default function LandingPage() {
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
-      <ImageBackground
-        source={LANDING_IMAGE}
+      <Image
+        source={require('../assets/images/landing_skein.png')}
         style={styles.backgroundImage}
-        resizeMode="cover"
-      >
-        <View style={styles.content}>
+        contentFit="cover"
+        priority="high"
+        cachePolicy="memory-disk"
+      />
+      <View style={styles.content}>
           <Text style={styles.title}>KnitKit</Text>
           
           <Pressable
@@ -30,8 +31,7 @@ export default function LandingPage() {
           >
             <Text style={styles.buttonText}>START</Text>
           </Pressable>
-        </View>
-      </ImageBackground>
+      </View>
     </View>
   );
 }
@@ -41,9 +41,11 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   backgroundImage: {
-    flex: 1,
-    width: '100%',
-    height: '100%',
+    position: 'absolute' as const,
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
   },
   content: {
     flex: 1,

@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
-import { View, Text, StyleSheet, ScrollView, Platform, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Platform, TextInput, TouchableOpacity } from 'react-native';
+import { Image } from 'expo-image';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 
@@ -66,13 +67,14 @@ export default function SizeGuidePage() {
   return (
     <View style={[styles.container, { paddingTop: insets.top, paddingBottom: insets.bottom }]}>
       <StatusBar style="dark" />
-      <ImageBackground
+      <Image
         source={require('../assets/images/dressmakers_dummy.png')}
         style={styles.backgroundImage}
-        imageStyle={styles.backgroundImageStyle}
-        resizeMode="cover"
-      >
-        <View style={styles.overlay} />
+        contentFit="cover"
+        priority="high"
+        cachePolicy="memory-disk"
+      />
+      <View style={styles.overlay} />
         <ScrollView
           contentContainerStyle={styles.scrollContent}
           showsVerticalScrollIndicator={false}
@@ -241,7 +243,6 @@ export default function SizeGuidePage() {
           </View>
         </View>
         </ScrollView>
-      </ImageBackground>
     </View>
   );
 }
@@ -252,11 +253,11 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.cream,
   },
   backgroundImage: {
-    flex: 1,
-    width: '100%',
-    height: '100%',
-  },
-  backgroundImageStyle: {
+    position: 'absolute' as const,
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
     opacity: 0.6,
   },
   overlay: {
