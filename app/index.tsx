@@ -4,7 +4,8 @@ import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { Typography } from '@/constants/theme';
 
-const YARN_IMAGE_URL = 'https://pub-e001eb4506b145aa938b5d3badbff6a5.r2.dev/attachments/ef5yu9zcuyqs8z9e8raox';
+// Load the local image from assets/images
+const YARN_IMAGE = require('../assets/images/background_yarn.png');
 
 export default function LandingPage() {
   const router = useRouter();
@@ -13,13 +14,13 @@ export default function LandingPage() {
     <View style={styles.container}>
       <StatusBar style="light" />
       <ImageBackground
-        source={{ uri: YARN_IMAGE_URL }}
+        source={YARN_IMAGE} // use local image
         style={styles.backgroundImage}
         resizeMode="cover"
       >
         <View style={styles.content}>
           <Text style={styles.title}>KnitKit</Text>
-          
+
           <Pressable
             style={({ pressed }) => [
               styles.button,
