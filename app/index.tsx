@@ -1,6 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Pressable } from 'react-native';
-import { ImageBackground } from 'expo-image';
+import { View, Text, StyleSheet, Pressable, ImageBackground } from 'react-native';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { Typography } from '@/constants/theme';
@@ -16,8 +15,7 @@ export default function LandingPage() {
       <ImageBackground
         source={LANDING_IMAGE}
         style={styles.backgroundImage}
-        contentFit="cover"
-        cachePolicy="memory-disk"
+        resizeMode="cover"
       >
         <View style={styles.content}>
           <Text style={styles.title}>KnitKit</Text>
