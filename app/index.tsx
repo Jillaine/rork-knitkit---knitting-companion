@@ -4,7 +4,7 @@ import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { Typography } from '@/constants/theme';
 
-const LANDING_IMAGE = require('../assets/images/background_yarn.png');
+const LANDING_IMAGE = require('../assets/images/landing_skein.png');
 
 export default function LandingPage() {
   const router = useRouter();
