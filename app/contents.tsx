@@ -6,7 +6,7 @@ import { StatusBar } from 'expo-status-bar';
 import { Colors, Layout, Typography } from '@/constants/theme';
 import { ChevronLeft } from 'lucide-react-native';
 
-const BACKGROUND_IMAGE_URL = 'https://raw.githubusercontent.com/Jillaine/KnitKit-Assets/main/images/background_yarn.jpg';
+const BACKGROUND_IMAGE = require('@/assets/images/background_yarn.jpg');
 
 export default function ContentsPage() {
   const router = useRouter();
@@ -16,7 +16,7 @@ export default function ContentsPage() {
       <StatusBar style="dark" />
       <View style={styles.backgroundImage}>
         <Image
-          source={{ uri: BACKGROUND_IMAGE_URL }}
+          source={BACKGROUND_IMAGE}
           style={StyleSheet.absoluteFillObject}
           contentFit="cover"
           cachePolicy="memory-disk"
