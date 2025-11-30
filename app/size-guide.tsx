@@ -67,7 +67,7 @@ export default function SizeGuidePage() {
     <View style={[styles.container, { paddingTop: insets.top, paddingBottom: insets.bottom }]}>
       <StatusBar style="dark" />
       <ImageBackground
-        source={{ uri: 'https://pub-e001eb4506b145aa938b5d3badbff6a5.r2.dev/attachments/0nquajkzoofiscysfz6v9' }}
+        source={require('@/assets/images/dressmakers_dummy.png')}
         style={styles.backgroundImage}
         imageStyle={styles.backgroundImageStyle}
         cachePolicy="memory-disk"
