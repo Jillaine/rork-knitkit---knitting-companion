@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, TextInput, Platform, TouchableOpacity, Image, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TextInput, Platform, TouchableOpacity, Image } from 'react-native';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 
@@ -529,10 +529,9 @@ const styles = StyleSheet.create({
   footerYarnBackground: {
     position: 'absolute',
     bottom: -30,
-    left: 0,
-    width: Dimensions.get('window').width * 1.5,
+    left: '-25%',
+    width: '150%',
     height: 180,
-    marginLeft: -Dimensions.get('window').width * 0.25,
     zIndex: 0,
     backgroundColor: Colors.cream,
   },
