@@ -1,6 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, Platform, Pressable } from 'react-native';
-import { Image } from 'expo-image';
+import { View, Text, StyleSheet, ScrollView, Platform, Pressable, Image } from 'react-native';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 
@@ -14,10 +13,9 @@ export default function ContentsPage() {
     <View style={styles.container}>
       <StatusBar style="dark" />
       <Image
-        source={require('@/assets/images/background_yarn.png')}
+        source={require('../assets/images/background_yarn.png')}
         style={styles.backgroundImage}
-        contentFit="cover"
-        cachePolicy="memory-disk"
+        resizeMode="cover"
       />
       <View style={styles.overlay}>
           <ScrollView
