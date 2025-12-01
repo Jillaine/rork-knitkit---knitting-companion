@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, TextInput, Platform, TouchableOpacity, Image } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TextInput, Platform, TouchableOpacity, Image, Dimensions } from 'react-native';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 
@@ -110,13 +110,14 @@ export default function PatternConverterPage() {
 
   const results = showResults ? calculateConversion() : null;
   const helperResults = showHelperResults ? calculateSizeHelper() : null;
+  const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
   return (
     <View style={[styles.container, { paddingTop: insets.top, paddingBottom: insets.bottom }]}>
       <StatusBar style="dark" />
       <Image
         source={require('@/assets/images/nobackground_blue_skein.png')}
-        style={[styles.footerYarnBackground, { bottom: insets.bottom }]}
+        style={[styles.footerYarnBackground, { bottom: insets.bottom, width: SCREEN_WIDTH * 1.5 }]}
         resizeMode="cover"
       />
       <ScrollView
@@ -529,8 +530,7 @@ const styles = StyleSheet.create({
   footerYarnBackground: {
     position: 'absolute' as const,
     bottom: -30,
-    left: '-25%',
-    width: '150%',
+    left: -50,
     height: 180,
     zIndex: 0,
     backgroundColor: Colors.cream,
