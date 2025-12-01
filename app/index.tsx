@@ -12,7 +12,7 @@ export default function LandingPage() {
     <View style={styles.container}>
       <StatusBar style="light" />
       <Image
-        source={require('../assets/images/landing_skein.png')}
+        source={require('@/assets/images/landing_skein.png')}
         style={styles.backgroundImage}
         resizeMode="cover"
       />
