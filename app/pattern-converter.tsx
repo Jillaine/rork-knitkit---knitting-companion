@@ -527,7 +527,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: Layout.spacing.xxl,
   },
   footerYarnBackground: {
-    position: 'absolute',
+    position: 'absolute' as const,
     bottom: -30,
     left: '-25%',
     width: '150%',
