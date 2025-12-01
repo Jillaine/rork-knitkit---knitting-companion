@@ -1,6 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Pressable } from 'react-native';
-import { Image } from 'expo-image';
+import { View, Text, StyleSheet, Pressable, Image } from 'react-native';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 
@@ -13,10 +12,9 @@ export default function LandingPage() {
     <View style={styles.container}>
       <StatusBar style="light" />
       <Image
-        source={require('@/assets/images/landing_skein.png')}
+        source={require('../assets/images/landing_skein.png')}
         style={styles.backgroundImage}
-        contentFit="cover"
-        cachePolicy="memory-disk"
+        resizeMode="cover"
       />
       <View style={styles.content}>
           <Text style={styles.title}>KnitKit</Text>
