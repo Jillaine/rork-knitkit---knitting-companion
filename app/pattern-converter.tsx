@@ -116,7 +116,7 @@ export default function PatternConverterPage() {
     <View style={[styles.container, { paddingTop: insets.top, paddingBottom: insets.bottom }]}>
       <StatusBar style="dark" />
       <Image
-        source={require('@/assets/images/nobackground_blue_skein.png')}
+        source={require('../assets/images/nobackground_blue_skein.png')}
         style={[styles.footerYarnBackground, { bottom: insets.bottom, width: SCREEN_WIDTH * 1.5 }]}
         resizeMode="cover"
       />
