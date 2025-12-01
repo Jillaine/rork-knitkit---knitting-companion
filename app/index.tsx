@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, Pressable, Image, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
+import { Image } from 'expo-image';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 
@@ -14,7 +15,7 @@ export default function LandingPage() {
       <Image
         source={require('../assets/images/landing_skein.png')}
         style={styles.backgroundImage}
-        resizeMode="cover"
+        contentFit="cover"
       />
       <View style={styles.content}>
           <Text style={styles.title}>KnitKit</Text>
@@ -33,8 +34,6 @@ export default function LandingPage() {
   );
 }
 
-const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -43,8 +42,10 @@ const styles = StyleSheet.create({
     position: 'absolute' as const,
     top: 0,
     left: 0,
-    width: SCREEN_WIDTH,
-    height: SCREEN_HEIGHT,
+    right: 0,
+    bottom: 0,
+    width: '100%',
+    height: '100%',
   },
   content: {
     flex: 1,
