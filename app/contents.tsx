@@ -13,7 +13,7 @@ export default function ContentsPage() {
     <View style={styles.container}>
       <StatusBar style="dark" />
       <Image
-        source={require('@/assets/images/background_yarn.png')}
+        source={require('../assets/images/background_yarn.png')}
         style={styles.backgroundImage}
         resizeMode="cover"
       />
