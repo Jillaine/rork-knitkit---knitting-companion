@@ -71,6 +71,7 @@ export default function SizeGuidePage() {
         source={require('../assets/images/dressmakers_dummy.png')}
         style={styles.backgroundImage}
         contentFit="cover"
+        cachePolicy="none"
       />
       <View style={styles.overlay} />
         <ScrollView

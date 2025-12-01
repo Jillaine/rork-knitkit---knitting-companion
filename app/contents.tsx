@@ -17,6 +17,7 @@ export default function ContentsPage() {
         source={require('../assets/images/background_yarn.png')}
         style={styles.backgroundImage}
         contentFit="cover"
+        cachePolicy="none"
       />
       <View style={styles.overlay}>
           <ScrollView

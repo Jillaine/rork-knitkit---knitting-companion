@@ -16,6 +16,7 @@ export default function LandingPage() {
         source={require('../assets/images/landing_skein.png')}
         style={styles.backgroundImage}
         contentFit="cover"
+        cachePolicy="none"
       />
       <View style={styles.content}>
           <Text style={styles.title}>KnitKit</Text>
