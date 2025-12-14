@@ -4,12 +4,12 @@
     "slug": "knitkit-knitting-companion",
     "version": "1.0.0",
     "orientation": "portrait",
-
+    "icon": "./assets/app-icon.png",  
     "scheme": "rork-app",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
 
-    "icon": "./assets/app-icon.png",
+    
 
     "splash": {
       "image": "./assets/images/splash-icon.png",
@@ -33,7 +33,7 @@
     },
 
     "web": {
-      "favicon": "./web/icons/icon-192.png",
+      "favicon": "./assets/app-icon.png",
       "bundler": "metro",
       "output": "static"
     },
