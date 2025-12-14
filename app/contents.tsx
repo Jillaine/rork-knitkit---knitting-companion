@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    height: 220,
+    height: 500,
     width: '100%',
     opacity: 0.6,
   },
@@ -192,7 +192,7 @@ export default function ContentsPage() {
       <Image
         source={BACKGROUND_IMAGE}
         style={styles.bottomYarn}
-        resizeMode="contain"
+        resizeMode="cover"
       />
     </View>
   );
