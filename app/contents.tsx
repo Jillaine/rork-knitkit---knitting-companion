@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
   backgroundYarnImage: {
     width: '100%',
     height: '100%',
-    opacity: 0.6,
-    transform: [{ translateY: 40 }], // positive = move image down, negative = up
+    opacity: 0.7,
+    transform: [{ translateY: -10 }], // positive = move image down, negative = up
   },
   scrollContent: {
     flexGrow: 1,
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
   linkItem: {
     paddingVertical: Layout.spacing.xl,
     alignItems: 'center',
-    backgroundColor: 'rgba(250, 249, 246, 0.9)',
+    backgroundColor: 'rgba(250, 249, 246, 0.98)',
   },
   linkItemPressed: {
     opacity: 0.8,
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     fontFamily: Typography.fontFamily,
     fontSize: Typography.sizes.body - 2,
     fontWeight: Typography.weights.regular,
-    color: Colors.charcoal,
+    color: Colors.black,
     marginLeft: Layout.spacing.xs,
   },
 });
