@@ -433,14 +433,13 @@ export default function PatternConverterPage() {
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
     backgroundColor: '#faf9f6',
   },
   scrollContent: {
-    paddingBottom: 80,
+    paddingBottom: 280,
   },
   container: {
     paddingHorizontal: 24,
@@ -581,8 +580,8 @@ const styles = StyleSheet.create({
   skein: {
     position: 'absolute',
     bottom: 0,
-    width: '120%',   // bigger and wider than screen
-    height: 260,     // taller
+    width: '140%',   // bigger and wider than screen
+    height: 320,     // taller
     alignSelf: 'center',
     opacity: 0.95,
   },
