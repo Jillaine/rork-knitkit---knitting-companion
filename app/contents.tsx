@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
   },
   bottomYarn: {
     position: 'absolute',
-    bottom: 80, //pull image up the page
+    bottom: 120, //pull image up the page
     left: 0,
     right: 0,
     height: 450, //keep it tall enoug
