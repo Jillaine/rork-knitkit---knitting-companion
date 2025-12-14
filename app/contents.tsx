@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
   },
   backgroundYarnWrapper: {
     ...StyleSheet.absoluteFillObject, // top:0, right:0, bottom:0, left:0
+    
     zIndex: 0,
     pointerEvents: 'none',
   },
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
   backgroundYarnImage: {
     width: '100%',
     height: '100%',
-    opacity: 0.72,
+    opacity: 1,
     transform: [{ translateY: -10 }], // positive = move image down, negative = up
   },
   scrollContent: {
@@ -91,7 +92,7 @@ const styles = StyleSheet.create({
   linkText: {
     fontFamily: Typography.fontFamily,
     fontSize: Typography.sizes.body,
-    fontWeight: Typography.weights.regular,
+    fontWeight: '600',
     color: Colors.black,
     textAlign: 'center',
   },
