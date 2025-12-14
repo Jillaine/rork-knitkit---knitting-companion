@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   // NEW: soft cream overlay over the yarn
   backgroundOverlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(248, 246, 243, 0.80)', // overlay 0.72
+    backgroundColor: 'rgba(248, 246, 243, 0.6)', // overlay 0.72
     zIndex: 1,
     pointerEvents: 'none',
   },
@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
     width: '100%',
     maxWidth: Layout.maxContentWidth,
     justifyContent: 'space-between',
+    position: 'relative',
     zIndex: 2,
   },
   header: {
