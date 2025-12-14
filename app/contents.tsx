@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     width: '100%',
     maxWidth: Layout.maxContentWidth,
     justifyContent: 'space-between',
+    zIndex: 2, //ensure content is above image
   },
   header: {
     alignItems: 'center',
@@ -52,7 +53,7 @@ const styles = StyleSheet.create({
   divider: {
     width: '100%',
     height: 1,
-    backgroundColor: Colors.black,
+    backgroundColor: Colors.charcoal,
   },
   linkList: {
     flex: 1,
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
     fontFamily: Typography.fontFamily,
     fontSize: Typography.sizes.body,
     fontWeight: Typography.weights.regular,
-    color: Colors.black, //darker text for contrast 
+    color: Colors.charcoal, //darker text for contrast 
     textAlign: 'center',
   },
   backLink: {
@@ -98,6 +99,7 @@ const styles = StyleSheet.create({
     height: 500, //keep it tall enoug
     width: '100%',
     opacity: 0.6,
+    zIndex: 0, //explicitly behind
   },
 });
 
