@@ -1,10 +1,10 @@
 {
   "expo": {
     "name": "KnitKit - Knitting Companion",
-    "slug": "knitkit-knitting-companion",
+    "slug": "rork-knitkit---knitting-companion",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/app-icon.png",  
+    "icon": "./assets/icon.png",  
     "scheme": "rork-app",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -12,28 +12,28 @@
     
 
     "splash": {
-      "image": "./assets/images/splash-icon.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#faf9f6"
     },
 
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "app.rork.knitkit-knitting-companion",
-      "icon": "./assets/app-icon.png"
+      "icon": "./assets/icon.png"
     },
 
     "android": {
       "package": "app.rork.knitkit_knitting_companion",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#faf9f6"
       },
-      "icon": "./assets/app-icon.png"
+      "icon": "./assets/icon.png"
     },
 
     "web": {
-      "favicon": "./assets/app-icon.png",
+      "favicon": "./assets/icon.png",
       "bundler": "metro",
       "output": "static"
     },
