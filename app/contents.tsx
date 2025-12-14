@@ -76,13 +76,31 @@ const styles = StyleSheet.create({
     height: 1,
     backgroundColor: Colors.black,
   },
+  linkItemSurface: {
+  width: '100%',
+  backgroundColor: 'rgba(255, 255, 255, 0.88)',
+  borderRadius: 16,
+
+  paddingVertical: Layout.spacing.lg,
+  paddingHorizontal: Layout.spacing.lg,
+
+   // 👇 SHADOW GOES HERE
+  shadowColor: '#000',
+  shadowOpacity: 0.08,
+  shadowRadius: 12,
+  shadowOffset: { width: 0, height: 4 },
+
+  // Android
+  elevation: 2,
+},
+
   linkList: {
     flex: 1,
     justifyContent: 'space-evenly',
     paddingVertical: Layout.spacing.xl,
   },
   linkItem: {
-    paddingVertical: Layout.spacing.xl,
+    
     alignItems: 'center',
     
   },
