@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   backgroundYarnImage: {
     width: '100%',
     height: '100%',
-    opacity: 0.5,
+    opacity: 0.72,
     transform: [{ translateY: -10 }], // positive = move image down, negative = up
   },
   scrollContent: {
