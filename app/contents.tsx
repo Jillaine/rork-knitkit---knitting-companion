@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   backgroundYarnImage: {
     width: '100%',
     height: '100%',
-    opacity: 0.7,
+    opacity: 0.6,
     transform: [{ translateY: -10 }], // positive = move image down, negative = up
   },
   scrollContent: {
@@ -75,10 +75,10 @@ const styles = StyleSheet.create({
   linkItem: {
     paddingVertical: Layout.spacing.xl,
     alignItems: 'center',
-    backgroundColor: 'rgba(250, 249, 246, 0.98)',
+    
   },
   linkItemPressed: {
-    opacity: 0.8,
+    opacity: 0.6,
   },
   linkText: {
     fontFamily: Typography.fontFamily,
