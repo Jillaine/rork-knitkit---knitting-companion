@@ -11,7 +11,7 @@ const BACKGROUND_IMAGE = require('../assets/images/background_yarn.png');
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.cream,
+    backgroundColor: '#F8F6F3',
     position: 'relative',
   },
   backgroundYarnWrapper: {
@@ -19,10 +19,17 @@ const styles = StyleSheet.create({
     zIndex: 0,
     pointerEvents: 'none',
   },
+  // NEW: soft cream overlay over the yarn
+  backgroundOverlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(248, 246, 243, 0.72)', // overlay 0.72
+    zIndex: 1,
+    pointerEvents: 'none',
+  },
   backgroundYarnImage: {
     width: '100%',
     height: '100%',
-    opacity: 0.6,
+    opacity: 0.5,
     transform: [{ translateY: -10 }], // positive = move image down, negative = up
   },
   scrollContent: {
@@ -78,7 +85,7 @@ const styles = StyleSheet.create({
     
   },
   linkItemPressed: {
-    opacity: 0.6,
+    opacity: 0.5,
   },
   linkText: {
     fontFamily: Typography.fontFamily,
@@ -121,6 +128,8 @@ export default function ContentsPage() {
           resizeMode="cover"
         />
       </View>
+      
+    <View style={styles.backgroundOverlay} />
 
       <ScrollView
         contentContainerStyle={styles.scrollContent}
