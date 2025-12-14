@@ -12,6 +12,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.cream,
+    position: 'relative',
+  },
+  backgroundYarnWrapper: {
+    ...StyleSheet.absoluteFillObject, // top:0, right:0, bottom:0, left:0
+    zIndex: 0,
+    pointerEvents: 'none',
+  },
+  backgroundYarnImage: {
+    width: '100%',
+    height: '100%',
+    opacity: 0.6,
+    transform: [{ translateY: 40 }], // positive = move image down, negative = up
   },
   scrollContent: {
     flexGrow: 1,
@@ -26,7 +38,7 @@ const styles = StyleSheet.create({
     width: '100%',
     maxWidth: Layout.maxContentWidth,
     justifyContent: 'space-between',
-    zIndex: 2, //ensure content is above image
+    zIndex: 2,
   },
   header: {
     alignItems: 'center',
@@ -53,7 +65,7 @@ const styles = StyleSheet.create({
   divider: {
     width: '100%',
     height: 1,
-    backgroundColor: Colors.charcoal,
+    backgroundColor: Colors.black,
   },
   linkList: {
     flex: 1,
@@ -63,16 +75,16 @@ const styles = StyleSheet.create({
   linkItem: {
     paddingVertical: Layout.spacing.xl,
     alignItems: 'center',
-    backgroundColor: 'rgba(250, 249, 246, 0.9)', //light cream behind each row
+    backgroundColor: 'rgba(250, 249, 246, 0.9)',
   },
   linkItemPressed: {
-    opacity: 0.5,
+    opacity: 0.8,
   },
   linkText: {
     fontFamily: Typography.fontFamily,
     fontSize: Typography.sizes.body,
     fontWeight: Typography.weights.regular,
-    color: Colors.charcoal, //darker text for contrast 
+    color: Colors.black,
     textAlign: 'center',
   },
   backLink: {
@@ -91,17 +103,6 @@ const styles = StyleSheet.create({
     color: Colors.charcoal,
     marginLeft: Layout.spacing.xs,
   },
-  bottomYarn: {
-    position: 'absolute',
-    bottom: 120, //pull image up the page
-    left: 0,
-    right: 0,
-    height: 450, //keep it tall enoug
-    width: '100%',
-    opacity: 0.6,
-    zIndex: 0, 
-    pointerEvents: 'none' 
-  },
 });
 
 // ✅ NOW the component (AFTER styles)
@@ -111,6 +112,15 @@ export default function ContentsPage() {
   return (
     <View style={styles.container}>
       <StatusBar style="dark" />
+
+      {/* Background yarn, full screen */}
+      <View style={styles.backgroundYarnWrapper}>
+        <Image
+          source={BACKGROUND_IMAGE}
+          style={styles.backgroundYarnImage}
+          resizeMode="cover"
+        />
+      </View>
 
       <ScrollView
         contentContainerStyle={styles.scrollContent}
@@ -191,13 +201,6 @@ export default function ContentsPage() {
           </Pressable>
         </View>
       </ScrollView>
-
-      {/* Yarn ball at the bottom */}
-      <Image
-        source={BACKGROUND_IMAGE}
-        style={styles.bottomYarn}
-        resizeMode="cover"
-      />
     </View>
   );
 }
