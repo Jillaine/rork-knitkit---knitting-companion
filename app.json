@@ -4,29 +4,40 @@
     "slug": "knitkit-knitting-companion",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+
     "scheme": "rork-app",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+
+    "icon": "./assets/app-icon.png",
+
     "splash": {
       "image": "./assets/images/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "app.rork.knitkit-knitting-companion"
+      "bundleIdentifier": "app.rork.knitkit-knitting-companion",
+      "icon": "./assets/app-icon.png"
     },
+
     "android": {
+      "package": "app.rork.knitkit_knitting_companion",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "app.rork.knitkit_knitting_companion"
+      "icon": "./assets/app-icon.png"
     },
+
     "web": {
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./web/icons/icon-192.png",
+      "bundler": "metro",
+      "output": "static"
     },
+
     "plugins": [
       [
         "expo-router",
@@ -37,6 +48,7 @@
       "expo-font",
       "expo-web-browser"
     ],
+
     "experiments": {
       "typedRoutes": true
     }

@@ -7,7 +7,7 @@ import { Colors, Layout, Typography } from '@/constants/theme';
 import { Picker } from '@react-native-picker/picker';
 
 // Load local background image
-const BACKGROUND_IMAGE = require('../assets/images/background_yarn.png');
+const BACKGROUND_IMAGE = require('../assets/images/dressmakers_dummy.png');
 
 type Measurements = {
   bust: string;
@@ -165,7 +165,7 @@ export default function SizeGuidePage() {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: Colors.cream },
   backgroundImage: { flex: 1, width: '100%', height: '100%' },
-  backgroundImageStyle: { opacity: 0.6 },
+  backgroundImageStyle: { opacity: 0.6, resizeMode: 'cover', },
   overlay: { ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(250, 249, 246, 0.5)' },
   scrollContent: { flexGrow: 1, paddingVertical: Platform.OS === 'web' ? 40 : 20, paddingHorizontal: Layout.spacing.xl },
   content: { alignSelf: 'center', width: '100%', maxWidth: Layout.maxContentWidth },

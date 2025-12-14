@@ -1,132 +1,24 @@
 import React from 'react';
-import { View, Text, StyleSheet, ImageBackground, ScrollView, Platform, Pressable } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Platform, Pressable, Image } from 'react-native';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { Colors, Layout, Typography } from '@/constants/theme';
-import { ChevronLeft } from 'lucide-react-native';
 
 // Load local background image
 const BACKGROUND_IMAGE = require('../assets/images/background_yarn.png');
 
-export default function ContentsPage() {
-  const router = useRouter();
-
-  return (
-    <View style={styles.container}>
-      <StatusBar style="dark" />
-      <ImageBackground
-        source={BACKGROUND_IMAGE}
-        style={styles.backgroundImage}
-        imageStyle={styles.backgroundImageStyle}
-      >
-        <View style={styles.overlay}>
-          <ScrollView
-            contentContainerStyle={styles.scrollContent}
-            showsVerticalScrollIndicator={false}
-          >
-            <View style={styles.content}>
-              <View style={styles.header}>
-                <Text style={styles.title}>KNITKIT</Text>
-                <View style={styles.divider} />
-                <Text style={styles.subtitle}>CONTENTS</Text>
-                <View style={styles.divider} />
-              </View>
-
-              <View style={styles.linkList}>
-                <Pressable
-                  style={({ pressed }) => [
-                    styles.linkItem,
-                    pressed && styles.linkItemPressed
-                  ]}
-                  onPress={() => router.push('/row-counter')}
-                >
-                  <Text style={styles.linkText}>Row / Stitch Counter</Text>
-                </Pressable>
-                <View style={styles.divider} />
-
-                <Pressable
-                  style={({ pressed }) => [
-                    styles.linkItem,
-                    pressed && styles.linkItemPressed
-                  ]}
-                  onPress={() => router.push('/size-guide')}
-                >
-                  <Text style={styles.linkText}>Size Guide</Text>
-                </Pressable>
-                <View style={styles.divider} />
-
-                <Pressable
-                  style={({ pressed }) => [
-                    styles.linkItem,
-                    pressed && styles.linkItemPressed
-                  ]}
-                  onPress={() => router.push('/yarn-guide')}
-                >
-                  <Text style={styles.linkText}>Yarn Guide</Text>
-                </Pressable>
-                <View style={styles.divider} />
-
-                <Pressable
-                  style={({ pressed }) => [
-                    styles.linkItem,
-                    pressed && styles.linkItemPressed
-                  ]}
-                  onPress={() => router.push('/needle-sizes')}
-                >
-                  <Text style={styles.linkText}>Needle Sizes</Text>
-                </Pressable>
-                <View style={styles.divider} />
-
-                <Pressable
-                  style={({ pressed }) => [
-                    styles.linkItem,
-                    pressed && styles.linkItemPressed
-                  ]}
-                  onPress={() => router.push('/pattern-converter')}
-                >
-                  <Text style={styles.linkText}>Pattern Converter</Text>
-                </Pressable>
-                <View style={styles.divider} />
-              </View>
-
-              <Pressable
-                style={({ pressed }) => [
-                  styles.backLink,
-                  pressed && styles.backLinkPressed
-                ]}
-                onPress={() => router.push('/row-counter')}
-              >
-                <ChevronLeft size={16} color={Colors.charcoal} strokeWidth={1.5} />
-                <Text style={styles.backLinkText}>Back to Counter</Text>
-              </Pressable>
-            </View>
-          </ScrollView>
-        </View>
-      </ImageBackground>
-    </View>
-  );
-}
-
+// ✅ STYLES DEFINED HERE (BEFORE the component)
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.cream,
-  },
-  backgroundImage: {
-    flex: 1,
-  },
-  backgroundImageStyle: {
-    opacity: 0.6,
-  },
-  overlay: {
-    flex: 1,
-    backgroundColor: 'rgba(250, 249, 246, 0.5)',
   },
   scrollContent: {
     flexGrow: 1,
     minHeight: '100%',
     paddingVertical: Platform.OS === 'web' ? 40 : 60,
     paddingHorizontal: Layout.spacing.xl,
+    paddingBottom: 240,
   },
   content: {
     flex: 1,
@@ -197,4 +89,111 @@ const styles = StyleSheet.create({
     color: Colors.charcoal,
     marginLeft: Layout.spacing.xs,
   },
+  bottomYarn: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: 220,
+    width: '100%',
+    opacity: 0.6,
+  },
 });
+
+// ✅ NOW the component (AFTER styles)
+export default function ContentsPage() {
+  const router = useRouter();
+
+  return (
+    <View style={styles.container}>
+      <StatusBar style="dark" />
+
+      <ScrollView
+        contentContainerStyle={styles.scrollContent}
+        showsVerticalScrollIndicator={false}
+      >
+        <View style={styles.content}>
+          <View style={styles.header}>
+            <Text style={styles.title}>KNITKIT</Text>
+            <View style={styles.divider} />
+            <Text style={styles.subtitle}>CONTENTS</Text>
+            <View style={styles.divider} />
+          </View>
+
+          <View style={styles.linkList}>
+            <Pressable
+              style={({ pressed }) => [
+                styles.linkItem,
+                pressed && styles.linkItemPressed
+              ]}
+              onPress={() => router.push('/row-counter')}
+            >
+              <Text style={styles.linkText}>Row / Stitch Counter</Text>
+            </Pressable>
+            <View style={styles.divider} />
+
+            <Pressable
+              style={({ pressed }) => [
+                styles.linkItem,
+                pressed && styles.linkItemPressed
+              ]}
+              onPress={() => router.push('/size-guide')}
+            >
+              <Text style={styles.linkText}>Size Guide</Text>
+            </Pressable>
+            <View style={styles.divider} />
+
+            <Pressable
+              style={({ pressed }) => [
+                styles.linkItem,
+                pressed && styles.linkItemPressed
+              ]}
+              onPress={() => router.push('/yarn-guide')}
+            >
+              <Text style={styles.linkText}>Yarn Guide</Text>
+            </Pressable>
+            <View style={styles.divider} />
+
+            <Pressable
+              style={({ pressed }) => [
+                styles.linkItem,
+                pressed && styles.linkItemPressed
+              ]}
+              onPress={() => router.push('/needle-sizes')}
+            >
+              <Text style={styles.linkText}>Needle Sizes</Text>
+            </Pressable>
+            <View style={styles.divider} />
+
+            <Pressable
+              style={({ pressed }) => [
+                styles.linkItem,
+                pressed && styles.linkItemPressed
+              ]}
+              onPress={() => router.push('/pattern-converter')}
+            >
+              <Text style={styles.linkText}>Pattern Converter</Text>
+            </Pressable>
+          </View>
+
+          <Pressable
+            style={({ pressed }) => [
+              styles.backLink,
+              pressed && styles.backLinkPressed,
+            ]}
+            onPress={() => router.back()}
+          >
+            <Text style={styles.backLinkText}>‹ Back to Counter</Text>
+          </Pressable>
+        </View>
+      </ScrollView>
+
+      {/* Yarn ball at the bottom */}
+      <Image
+        source={BACKGROUND_IMAGE}
+        style={styles.bottomYarn}
+        resizeMode="contain"
+      />
+    </View>
+  );
+}

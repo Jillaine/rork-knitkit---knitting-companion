@@ -4,8 +4,8 @@ import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { Typography } from '@/constants/theme';
 
-// Load the local image from assets/images
-const YARN_IMAGE = require('../assets/images/background_yarn.png');
+// Import the local image
+const landing_skein = require("../assets/images/landing_skein.png");
 
 export default function LandingPage() {
   const router = useRouter();
@@ -14,7 +14,7 @@ export default function LandingPage() {
     <View style={styles.container}>
       <StatusBar style="light" />
       <ImageBackground
-        source={YARN_IMAGE} // use local image
+        source={landing_skein}  // ✅ Now it's defined
         style={styles.backgroundImage}
         resizeMode="cover"
       >
