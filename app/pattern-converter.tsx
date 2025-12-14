@@ -155,6 +155,7 @@ export default function PatternConverterPage() {
     >
       <StatusBar style="dark" />
 
+      {/* Static skein background at bottom, bigger */}
       <Image source={blueSkeinImage} style={styles.skein} resizeMode="cover" />
 
       <ScrollView
@@ -416,18 +417,19 @@ export default function PatternConverterPage() {
               );
             })()}
           </View>
+
+          {/* Contents button appears AFTER size helper + size suggestions */}
+          <View style={styles.bottomNavWrapper}>
+            <TouchableOpacity
+              activeOpacity={0.8}
+              onPress={() => router.push('/contents')}
+              style={styles.contentsButton}
+            >
+              <Text style={styles.contentsButtonText}>Contents</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </ScrollView>
-
-      <View style={styles.bottomNavWrapper}>
-        <TouchableOpacity
-          activeOpacity={0.8}
-          onPress={() => router.push('/contents')}
-          style={styles.contentsButton}
-        >
-          <Text style={styles.contentsButtonText}>Contents</Text>
-        </TouchableOpacity>
-      </View>
     </View>
   );
 }
@@ -438,11 +440,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#faf9f6',
   },
   scrollContent: {
-    paddingBottom: 200,
+    paddingBottom: 80,
   },
   container: {
     paddingHorizontal: 24,
     paddingTop: 32,
+    paddingBottom: 24,
   },
   appName: {
     fontSize: 18,
@@ -539,7 +542,6 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: '#111111',
   },
-  // Converter results card
   convertResultsCard: {
     marginTop: 24,
     marginBottom: 32,
@@ -575,11 +577,14 @@ const styles = StyleSheet.create({
     color: '#111111',
     lineHeight: 22,
   },
+  // Static skein background at bottom, bigger
   skein: {
     position: 'absolute',
     bottom: 0,
-    width: '100%',
-    height: 210,
+    width: '120%',   // bigger and wider than screen
+    height: 260,     // taller
+    alignSelf: 'center',
+    opacity: 0.95,
   },
   sizeSection: {
     marginTop: 16,
@@ -617,7 +622,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 4,
   },
-  // Size suggestions card
   sizeResultsCard: {
     marginTop: 16,
     marginBottom: 24,
@@ -670,13 +674,9 @@ const styles = StyleSheet.create({
     marginTop: 12,
   },
   bottomNavWrapper: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
     alignItems: 'center',
-    paddingBottom: 20,
-    zIndex: 2,
+    marginTop: 8,
+    marginBottom: 40,
   },
   contentsButton: {
     width: '80%',
