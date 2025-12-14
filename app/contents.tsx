@@ -93,13 +93,14 @@ const styles = StyleSheet.create({
   },
   bottomYarn: {
     position: 'absolute',
-    bottom: -150, //pull image up the page
+    bottom: 80, //pull image up the page
     left: 0,
     right: 0,
-    height: 500, //keep it tall enoug
+    height: 450, //keep it tall enoug
     width: '100%',
     opacity: 0.6,
-    zIndex: 0, //explicitly behind
+    zIndex: 0, 
+    pointerEvents: 'none' 
   },
 });
 
