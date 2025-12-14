@@ -62,15 +62,16 @@ const styles = StyleSheet.create({
   linkItem: {
     paddingVertical: Layout.spacing.xl,
     alignItems: 'center',
+    backgroundColor: 'rgba(250, 249, 246, 0.9)', //light cream behind each row
   },
   linkItemPressed: {
-    opacity: 0.6,
+    opacity: 0.5,
   },
   linkText: {
     fontFamily: Typography.fontFamily,
     fontSize: Typography.sizes.body,
     fontWeight: Typography.weights.regular,
-    color: Colors.charcoal,
+    color: Colors.black, //darker text for contrast 
     textAlign: 'center',
   },
   backLink: {
@@ -91,10 +92,10 @@ const styles = StyleSheet.create({
   },
   bottomYarn: {
     position: 'absolute',
-    bottom: 0,
+    bottom: -150, //pull image up the page
     left: 0,
     right: 0,
-    height: 500,
+    height: 500, //keep it tall enoug
     width: '100%',
     opacity: 0.6,
   },
