@@ -114,19 +114,20 @@ const styles = StyleSheet.create({
   backgroundWrapper: {
     ...StyleSheet.absoluteFillObject,
     pointerEvents: 'none',
+    zIndex: 0,
   },
 
   backgroundImage: {
     width: '100%',
     height: '100%',
     resizeMode: 'cover',
-    opacity: 0.55,
+    opacity: 0.6,
     transform: [{ translateY: -10 }],
   },
 
   overlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(248, 246, 243, 0.7)',
+    backgroundColor: 'rgba(248, 246, 243, 0.55)',
   },
 
   scrollContent: {
@@ -143,6 +144,9 @@ const styles = StyleSheet.create({
     width: '100%',
     maxWidth: Layout.maxContentWidth,
     justifyContent: 'space-between',
+    paddingBottom: Layout.spacing.xl,
+    position: 'relative',
+    zIndex: 2,
   },
 
   header: {
@@ -177,9 +181,9 @@ const styles = StyleSheet.create({
   },
 
   linkList: {
-    flex: 1,
-    justifyContent: 'space-evenly',
-    paddingVertical: Layout.spacing.xl,
+    justifyContent: 'flex-start',    // start at top
+  paddingVertical: Layout.spacing.lg,
+  
   },
 
   linkItem: {
