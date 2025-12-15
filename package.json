@@ -8,12 +8,11 @@
   "start-web-dev": "DEBUG=expo* bunx rork start -p zvykttfpuif4ex77koukc --web --tunnel",
   "web:build": "expo export --platform web",
 
-  "build": "expo export -p web",
-  "postbuild": "node scripts/copy-pwa-assets.js",
+  "build": "expo export -p web && node scripts/copy-pwa-assets.js",
 
   "web": "expo start --web",
   "lint": "expo lint"
-}
+},
 
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",
