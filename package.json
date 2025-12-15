@@ -3,15 +3,18 @@
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {
-    "start": "bunx rork start -p zvykttfpuif4ex77koukc --tunnel",
-    "start-web": "bunx rork start -p zvykttfpuif4ex77koukc --web --tunnel",
-    "start-web-dev": "DEBUG=expo* bunx rork start -p zvykttfpuif4ex77koukc --web --tunnel",
-    "web:build": "expo export --platform web",
-    "build": "expo export -p web && scripts\\copy-pwa-assets.bat",
+  "start": "bunx rork start -p zvykttfpuif4ex77koukc --tunnel",
+  "start-web": "bunx rork start -p zvykttfpuif4ex77koukc --web --tunnel",
+  "start-web-dev": "DEBUG=expo* bunx rork start -p zvykttfpuif4ex77koukc --web --tunnel",
+  "web:build": "expo export --platform web",
 
-    "web": "expo start --web",
-    "lint": "expo lint"
-  },
+  "build": "expo export -p web",
+  "postbuild": "node scripts/copy-pwa-assets.js",
+
+  "web": "expo start --web",
+  "lint": "expo lint"
+}
+
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",
     "@nkzw/create-context-hook": "^1.1.0",
