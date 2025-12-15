@@ -4,11 +4,11 @@ import { useEffect } from "react";
 import { Platform } from "react-native";
 
 export default function RootLayout() {
-  useEffect(() => {
-    if (Platform.OS === "web" && "serviceWorker" in navigator) {
-      navigator.serviceWorker.register("/sw.js").catch(console.error);
-    }
-  }, []);
+ // useEffect(() => {
+  //  if (Platform.OS === "web" && "serviceWorker" in navigator) {
+    //  navigator.serviceWorker.register("/sw.js").catch(console.error);
+    //}
+  //}, []);
 
   return (
     <>
