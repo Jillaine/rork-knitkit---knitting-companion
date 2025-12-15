@@ -1,11 +1,15 @@
 import { Stack } from "expo-router";
 import Head from "expo-router/head";
-
-// Removed: useFonts, SplashScreen imports and related code
-// Removed: useEffect for SplashScreen
-// Removed: if (!loaded && !error) return null;
+import { useEffect } from "react";
+import { Platform } from "react-native";
 
 export default function RootLayout() {
+  useEffect(() => {
+    if (Platform.OS === "web" && "serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/sw.js").catch(console.error);
+    }
+  }, []);
+
   return (
     <>
       <Head>
